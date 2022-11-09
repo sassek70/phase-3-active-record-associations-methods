@@ -8,6 +8,9 @@ class Song < ActiveRecord::Base
 
   def drake_made_this
 
+    # create a variable for the artist
+    #search the Artist table for "Drake" and create a new Artist if "Drake" is not found
+    #self.update changes the song's artist to the variable.
     drake = Artist.find_or_create_by(name: "Drake")
     self.update(artist: drake) 
     # when this method is called it should assign the song's artist to Drake
